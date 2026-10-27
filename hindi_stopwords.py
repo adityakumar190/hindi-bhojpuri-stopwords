@@ -1,8 +1,7 @@
 """
 Topic: Indic Language Stop Words for Natural Language Processing
 Author Name: Aditya Kumar
-Short Description: An illustrative Hindi stop-word list for
-text preprocessing in Natural Language Processing (NLP).
+Short Description: An illustrative Hindi stop-word list for text preprocessing in Natural Language Processing (NLP).
 Semester: Monsoon Semester 2026
 Affiliation: Department of Humanities and Social Sciences, Indian Institute of Technology (Indian School of Mines), Dhanbad
 """
@@ -105,4 +104,7 @@ hindi_stopwords = [
     "sirf",
     "bahut",
     "ek"
+    "kuch"
+    "koi"
+    "vaala"
 ]
