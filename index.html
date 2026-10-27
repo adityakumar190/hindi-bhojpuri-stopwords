@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="An academic student project documenting illustrative
+        Hindi and Bhojpuri stop-word lists for NLP preprocessing.">
+
+  <title>Hindi and Bhojpuri Stop Words | NLP Project</title>
+
+  <style>
+    :root {
+      --navy: #18324b;
+      --blue: #285b82;
+      --paper: #ffffff;
+      --background: #f4f7fa;
+      --text: #243447;
+      --muted: #627386;
+      --border: #dce4ec;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 48px 20px;
+    }
+
+    .container {
+      width: min(960px, 92%);
+      margin: auto;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.78rem;
+      color: #d5e4f2;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      line-height: 1.2;
+      margin: 12px 0;
+    }
+
+    header p {
+      max-width: 700px;
+      color: #e3ebf3;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+      margin-right: 22px;
+    }
+
+    main {
+      padding: 30px 0 50px;
+    }
+
+    section {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 26px;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      color: var(--navy);
+      margin-top: 0;
+      font-size: 1.45rem;
+    }
+
+    h3 {
+      color: var(--navy);
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .language-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      background: #fbfcfe;
+    }
+
+    .script {
+      font-size: 1.25rem;
+      color: var(--navy);
+    }
+
+    .file-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--blue);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px solid var(--blue);
+    }
+
+    a:focus {
+      outline: 3px solid #82b7e5;
+      outline-offset: 3px;
+    }
+
+    .note {
+      border-left: 4px solid var(--blue);
+      background: #f1f6fb;
+      padding: 14px 18px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .language-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 12px 5px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="eyebrow">Natural Language Processing · Student Project</div>
+
+      <h1>Hindi and Bhojpuri Stop Words</h1>
+
+      <p>
+        An introductory academic resource for exploring stop-word
+        lists and text preprocessing in two Indic languages.
+      </p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="#overview">Overview</a>
+      <a href="#languages">Language Files</a>
+      <a href="#methodology">Methodology</a>
+      <a href="#references">References</a>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section id="overview">
+      <h2>Project Overview</h2>
+
+      <p>
+        Stop words are words that are sometimes filtered during
+        text preprocessing because they contribute relatively
+        little to a particular analysis. Their usefulness depends
+        on the language, dataset and NLP task.
+      </p>
+
+      <p>
+        This project presents illustrative Python lists for Hindi
+        and Bhojpuri. It provides a starting point for learning
+        about language-specific preprocessing.
+      </p>
+
+      <p class="meta">
+        Author: Aditya Kumar<br>
+        Department and Institution: Department of Humanities and Social Sciences, Indian Institute of Technology (Indian School of Mines), Dhanbad<br>
+        Semester: Monsoon Semester 2026
+      </p>
+    </section>
+
+    <section id="languages">
+      <h2>Language Resources</h2>
+
+      <p>
+        Select a language to view its Python source file on GitHub.
+      </p>
+
+      <div class="language-grid">
+
+        <article class="language-card">
+          <h3>Hindi</h3>
+          <div class="script">Hindi (Roman Transliteration)</div>
+
+          <p>
+            An illustrative list of Hindi stop words written in
+            Roman letters for text preprocessing in NLP.
+          </p>
+
+          <p class="meta">File: hindi_stopwords.py</p>
+
+          <a class="file-link"
+             href="https://github.com/adityakumar190/hindi-bhojpuri-stopwords/blob/main/hindi_stopwords.py">
+            View Hindi Python File →
+          </a>
+        </article>
+
+        <article class="language-card">
+          <h3>Bhojpuri</h3>
+          <div class="script">Bhojpuri (Roman Transliteration)</div>
+
+          <p>
+            A preliminary list of Bhojpuri stop words written in
+            Roman letters. Regional usage and spelling variations
+            should be considered.
+          </p>
+
+          <p class="meta">File: bhojpuri_stopwords.py</p>
+
+          <a class="file-link"
+             href="https://github.com/adityakumar190/hindi-bhojpuri-stopwords/blob/main/bhojpuri_stopwords.py">
+            View Bhojpuri Python File →
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="methodology">
+      <h2>Methodology and Limitations</h2>
+
+      <p>
+        The stop-word lists are stored as Python lists of strings
+        written using Roman transliteration (English letters).
+        They are intended as illustrative resources for basic
+        text preprocessing in Natural Language Processing (NLP).
+      </p>
+
+      <p>
+        These lists should not be considered exhaustive or
+        linguistically validated. Bhojpuri has regional variation,
+        and Hindi and Bhojpuri words may overlap. A research
+        application should evaluate candidate words against a
+        representative corpus and the intended NLP task.
+      </p>
+
+      <div class="note">
+        <strong>Important:</strong>
+        Removing a word may change meaning or remove useful
+        grammatical information. Stop-word removal is optional,
+        not a universal requirement in NLP.
+      </div>
+    </section>
+
+    <section id="references">
+      <h2>References and Further Reading</h2>
+
+      <ul>
+        <li>
+          <a href="https://docs.github.com/en/pages">
+            GitHub Pages Documentation
+          </a>
+          — website publishing and hosting.
+        </li>
+        <li>
+          <a href="https://www.nltk.org/">
+            Natural Language Toolkit (NLTK)
+          </a>
+          — NLP tools and documentation.
+        </li>
+      </ul>
+
+      <p class="meta">
+        The word lists in this project are student-prepared
+        illustrative examples, not lists copied from these references.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      Hindi and Bhojpuri Stop Words · NLP Academic Project · 2026
+    </div>
+  </footer>
+
+</body>
+</html>
