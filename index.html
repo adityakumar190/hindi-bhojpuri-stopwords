@@ -1,322 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description"
-        content="An academic student project documenting illustrative
-        Hindi and Bhojpuri stop-word lists for NLP preprocessing.">
-
-  <title>Hindi and Bhojpuri Stop Words | NLP Project</title>
-
-  <style>
-    :root {
-      --navy: #18324b;
-      --blue: #285b82;
-      --paper: #ffffff;
-      --background: #f4f7fa;
-      --text: #243447;
-      --muted: #627386;
-      --border: #dce4ec;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    header {
-      background: var(--navy);
-      color: white;
-      padding: 48px 20px;
-    }
-
-    .container {
-      width: min(960px, 92%);
-      margin: auto;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.78rem;
-      color: #d5e4f2;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 5vw, 3.1rem);
-      line-height: 1.2;
-      margin: 12px 0;
-    }
-
-    header p {
-      max-width: 700px;
-      color: #e3ebf3;
-    }
-
-    nav {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      padding: 12px 0;
-    }
-
-    nav a {
-      color: var(--blue);
-      text-decoration: none;
-      font-weight: 600;
-      margin-right: 22px;
-    }
-
-    main {
-      padding: 30px 0 50px;
-    }
-
-    section {
-      background: var(--paper);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 26px;
-      margin-bottom: 22px;
-    }
-
-    h2 {
-      color: var(--navy);
-      margin-top: 0;
-      font-size: 1.45rem;
-    }
-
-    h3 {
-      color: var(--navy);
-    }
-
-    .meta {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .language-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .language-card {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px;
-      background: #fbfcfe;
-    }
-
-    .script {
-      font-size: 1.25rem;
-      color: var(--navy);
-    }
-
-    .file-link {
-      display: inline-block;
-      margin-top: 10px;
-      color: var(--blue);
-      font-weight: 700;
-      text-decoration: none;
-      border-bottom: 1px solid var(--blue);
-    }
-
-    a:focus {
-      outline: 3px solid #82b7e5;
-      outline-offset: 3px;
-    }
-
-    .note {
-      border-left: 4px solid var(--blue);
-      background: #f1f6fb;
-      padding: 14px 18px;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 24px 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      .language-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 20px;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 5px 12px 5px 0;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indic Language Stop Words for NLP: Hindi and Bhojpuri</title>
+<meta name="description" content="Stop-word lists of 100 words each for Hindi and Bhojpuri, written in Roman letters, for NLP text preprocessing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1f2a5c;--ink2:#2f3d82;--teal:#0e6b72;--text:#1f2330;--muted:#596075;--rule:#d3d8e8;--band:#eef1f8;--paper:#fcfcfe}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:1.5rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--text);font-family:"Newsreader",Georgia,"Times New Roman",serif;font-size:1.14rem;line-height:1.75}
+a{color:var(--teal);text-underline-offset:3px}
+a:focus-visible{outline:3px solid #e0a800;outline-offset:3px;border-radius:2px}
+.hero{background:linear-gradient(135deg,#18214b 0%,var(--ink2) 100%);color:#fff;padding:0 1.25rem 3rem;border-top:10px solid var(--teal)}
+.hero .in{max-width:70rem;margin:0 auto;padding-top:2.6rem}
+.hero .kind{font-family:"Source Sans 3",system-ui,sans-serif;font-size:1rem;color:#bfc9ee;margin:0 0 1rem;letter-spacing:.02em}
+.hero h1{font-weight:600;font-size:clamp(2rem,5vw,3.3rem);line-height:1.15;margin:0;max-width:20em;padding-top:1.1rem;border-top:4px solid #fff}
+.hero .sub{font-size:1.3rem;color:#d6ddf7;margin:.9rem 0 1.8rem;font-style:italic}
+.hero dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1rem 2rem;margin:0 0 1.8rem;max-width:52rem;font-family:"Source Sans 3",system-ui,sans-serif}
+.hero dt{font-size:.88rem;color:#aab6e6}
+.hero dd{margin:.1rem 0 0;font-size:1.05rem}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem;font-family:"Source Sans 3",system-ui,sans-serif}
+.btns a{color:#fff;border:1.5px solid #8f9fe0;padding:.55rem 1.1rem;border-radius:6px;text-decoration:none;font-weight:600}
+.btns a:first-child{background:#fff;color:var(--ink);border-color:#fff}
+.btns a:hover{background:#e6ebff;color:var(--ink)}
+.page{max-width:70rem;margin:0 auto;padding:2.5rem 1.25rem 3rem;display:grid;grid-template-columns:13.5rem minmax(0,1fr);gap:3.5rem}
+.toc{position:sticky;top:1.5rem;align-self:start;font-family:"Source Sans 3",system-ui,sans-serif;font-size:.97rem}
+.toc p{margin:0 0 .6rem;font-weight:600;color:var(--ink)}
+.toc ol{list-style:none;margin:0;padding:0;border-left:2px solid var(--rule)}
+.toc a{display:block;padding:.28rem 0 .28rem .9rem;margin-left:-2px;border-left:2px solid transparent;color:var(--muted);text-decoration:none}
+.toc a:hover{color:var(--ink);border-left-color:var(--teal)}
+article{max-width:46rem}
+section{margin-bottom:3rem}
+h2{font-size:1.7rem;font-weight:600;color:var(--ink);line-height:1.25;margin:0 0 1rem;padding-top:.8rem;border-top:3px solid var(--ink)}
+h2 span{color:var(--teal);margin-right:.5rem}
+h3{font-size:1.2rem;color:var(--ink);margin:1.8rem 0 .4rem}
+p{margin:.8rem 0;text-align:justify;hyphens:auto}
+.abs{background:var(--band);border-left:5px solid var(--teal);padding:1.2rem 1.5rem;border-radius:0 8px 8px 0}
+.abs h2{border:0;padding:0;font-size:1.3rem;margin-bottom:.3rem}
+ol.n,ul.b{padding-left:1.5rem}
+li{margin:.45rem 0}
+.tw{overflow-x:auto;margin:1.2rem 0;border:1px solid var(--rule);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-family:"Source Sans 3",system-ui,sans-serif;font-size:.98rem;line-height:1.5}
+caption{caption-side:top;text-align:left;padding:.7rem .9rem;font-style:italic;font-family:"Newsreader",Georgia,serif;color:var(--muted);font-size:1rem}
+th,td{padding:.65rem .9rem;text-align:left;vertical-align:top;border-top:1px solid var(--rule)}
+th{background:var(--band);color:var(--ink);font-weight:600}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:.45rem;padding:0;margin:1rem 0}
+.chips li{margin:0;padding:.18rem .75rem;border:1px solid var(--rule);background:#fff;border-radius:999px;font-family:"Source Sans 3",system-ui,sans-serif;font-size:.95rem}
+.chips li.s{background:#dcf0f1;border-color:#9fcfd2;color:#0a4b50}
+.key{font-family:"Source Sans 3",system-ui,sans-serif;font-size:.92rem;color:var(--muted)}
+.key i{display:inline-block;width:.9rem;height:.9rem;border-radius:50%;background:#dcf0f1;border:1px solid #9fcfd2;vertical-align:-2px;margin-right:.3rem}
+code{font-family:Consolas,"Courier New",monospace;font-size:.92em;background:var(--band);padding:.1rem .35rem;border-radius:4px}
+footer{background:var(--ink);color:#c5cdf0;text-align:center;padding:1.6rem 1.25rem;font-family:"Source Sans 3",system-ui,sans-serif;font-size:.95rem}
+@media (max-width:62rem){.page{grid-template-columns:1fr;gap:1.5rem}.toc{position:static}.toc ol{display:flex;flex-wrap:wrap;gap:0 1.2rem;border:0}.toc a{border:0;padding:.2rem 0;margin:0}}
+@media print{.toc,.btns{display:none}.hero{background:#fff;color:#000;border-top:4px solid #000}.hero h1{border-color:#000}.hero .sub,.hero dt,.hero .kind{color:#333}.page{display:block}}
+</style>
 </head>
-
 <body>
+<header class="hero"><div class="in">
+  <p class="kind">Assignment 02 &middot; Natural Language Processing</p>
+  <h1>Indic Language Stop Words for Natural Language Processing</h1>
+  <p class="sub">Hindi and Bhojpuri</p>
+  <dl>
+    <div><dt>Author</dt><dd>[Enter Student Name(s)]</dd></div>
+    <div><dt>Affiliation</dt><dd>[Enter Department and Institution Name]</dd></div>
+    <div><dt>Semester</dt><dd>Monsoon Semester 2026</dd></div>
+  </dl>
+  <div class="btns"><a href="https://github.com/your-username/your-assignment-2-repository">GitHub repository</a><a href="#files">Project files</a></div>
+</div></header>
 
-  <header>
-    <div class="container">
-      <div class="eyebrow">Natural Language Processing · Student Project</div>
+<div class="page">
+<nav class="toc" aria-label="Contents"><p>Contents</p><ol>
+  <li><a href="#abstract">Abstract</a></li><li><a href="#introduction">1. Introduction</a></li>
+  <li><a href="#objectives">2. Objectives</a></li><li><a href="#languages">3. Languages</a></li>
+  <li><a href="#method">4. Method</a></li><li><a href="#files">5. Project files</a></li>
+  <li><a href="#lists">6. Stop-word lists</a></li><li><a href="#observations">7. Observations</a></li>
+  <li><a href="#limitations">8. Limitations</a></li><li><a href="#conclusion">9. Conclusion</a></li>
+  <li><a href="#references">References</a></li></ol></nav>
 
-      <h1>Hindi and Bhojpuri Stop Words</h1>
+<article>
+<section id="abstract" class="abs"><h2>Abstract</h2><p>Stop words are high-frequency function words, such as conjunctions, pronouns, postpositions and auxiliary verbs, that are commonly removed during text preprocessing in Natural Language Processing (NLP). This assignment documents stop words for two Indo-Aryan languages, Hindi and Bhojpuri. For each language, a list of 100 unique stop words was compiled and written in Roman (English) letters, transliterated from the Devanagari script. Each list is stored in a Python file named after its language and published in a GitHub repository, with this webpage hosted through GitHub Pages. Comparing the two lists shows that 30 words appear in both, mainly postpositions, interrogatives and quantifiers, while pronouns and auxiliary verbs differ more. Because Roman spelling is not standardised, any practical list needs to allow for variant forms.</p></section>
 
-      <p>
-        An introductory academic resource for exploring stop-word
-        lists and text preprocessing in two Indic languages.
-      </p>
-    </div>
-  </header>
+<section id="introduction"><h2><span>1</span>Introduction</h2>
+<p>Text written in any language contains a large number of words that occur very frequently but contribute little to the meaning of a sentence. These words, known as stop words, include conjunctions, pronouns, postpositions, auxiliary verbs and words of negation. In English, <em>and</em>, <em>the</em> and <em>is</em> are typical examples; in Hindi, <em>aur</em> (and) and <em>hai</em> (is) play the same role.</p>
+<p>In Natural Language Processing (NLP), stop words are commonly removed during text preprocessing. Doing so reduces the size of the vocabulary, lowers noise in the data, and allows tasks such as text classification, information retrieval and topic modelling to concentrate on content-bearing words.</p>
+<p>Hindi and Bhojpuri both belong to the Indo-Aryan branch of the Indo-European language family and are traditionally written in the Devanagari script. Because the two languages share part of their vocabulary and grammar while differing in many everyday forms, their function words offer a useful basis for comparison. This assignment therefore compiles and presents a stop-word list for each language.</p></section>
 
-  <nav>
-    <div class="container">
-      <a href="#overview">Overview</a>
-      <a href="#languages">Language Files</a>
-      <a href="#methodology">Methodology</a>
-      <a href="#references">References</a>
-    </div>
-  </nav>
+<section id="objectives"><h2><span>2</span>Objectives</h2>
+<ol class="n">
+<li>To compile a list of 100 unique stop words for Hindi and a list of 100 unique stop words for Bhojpuri.</li>
+<li>To write the words in Roman (English) letters so that they can be used in any standard text-processing environment.</li>
+<li>To store each list in a separate Python file named after its language, following the prescribed file format.</li>
+<li>To publish the files in a public GitHub repository and present the work on a webpage hosted through GitHub Pages.</li>
+<li>To compare the two lists and note the similarities and differences between them.</li></ol></section>
 
-  <main class="container">
+<section id="languages"><h2><span>3</span>Languages</h2>
+<p>Table 1 summarises the two languages and the way each is represented in this project.</p>
+<div class="tw"><table><caption>Table 1. Languages included in the project</caption>
+<thead><tr><th>Language</th><th>Family</th><th>Traditional script</th><th>Script used here</th><th>Words</th></tr></thead>
+<tbody><tr><td>Hindi</td><td>Indo-Aryan</td><td>Devanagari</td><td>Roman (Latin)</td><td>100</td></tr>
+<tr><td>Bhojpuri</td><td>Indo-Aryan</td><td>Devanagari</td><td>Roman (Latin)</td><td>100</td></tr></tbody></table></div></section>
 
-    <section id="overview">
-      <h2>Project Overview</h2>
+<section id="method"><h2><span>4</span>Method</h2>
+<p>The lists were prepared in the following stages.</p>
+<ol class="n">
+<li><strong>Selection.</strong> Common function words were chosen for each language from the main grammatical groups: conjunctions, pronouns, postpositions, auxiliary verbs, interrogatives, negation and quantifiers.</li>
+<li><strong>Romanisation.</strong> Each word was written in Roman letters using commonly seen spellings (for example, <em>aur</em>, <em>tha</em> and <em>hai</em>). Variant spellings of a word, such as <em>nahi</em> and <em>nahin</em>, were both included where relevant.</li>
+<li><strong>Verification.</strong> Each list was checked to confirm that it contains exactly 100 entries and that no word is repeated within it.</li>
+<li><strong>File preparation.</strong> The lists were saved as Python lists in files named <code>hindi_stopwords.py</code> and <code>bhojpuri_stopwords.py</code>, each beginning with the prescribed header describing the topic, authors, semester and affiliation.</li>
+<li><strong>Publication.</strong> The files were uploaded to a GitHub repository, and this webpage was published with GitHub Pages, with each file name linked to its page in the repository.</li></ol></section>
 
-      <p>
-        Stop words are words that are sometimes filtered during
-        text preprocessing because they contribute relatively
-        little to a particular analysis. Their usefulness depends
-        on the language, dataset and NLP task.
-      </p>
+<section id="files"><h2><span>5</span>Project files</h2>
+<p>Each file name in Table 2 links to the file in the GitHub repository. The complete project is available in the <a href="https://github.com/your-username/your-assignment-2-repository">repository</a>.</p>
+<div class="tw"><table><caption>Table 2. Files in the repository</caption>
+<thead><tr><th>File</th><th>Content</th><th>Entries</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/your-username/your-assignment-2-repository/blob/main/hindi_stopwords.py">hindi_stopwords.py</a></td><td>Python list <code>hindi_stopwords</code></td><td>100</td></tr>
+<tr><td><a href="https://github.com/your-username/your-assignment-2-repository/blob/main/bhojpuri_stopwords.py">bhojpuri_stopwords.py</a></td><td>Python list <code>bhojpuri_stopwords</code></td><td>100</td></tr>
+<tr><td><a href="https://your-username.github.io/your-assignment-2-repository/">index.html</a></td><td>This project webpage</td><td>&ndash;</td></tr></tbody></table></div></section>
 
-      <p>
-        This project presents illustrative Python lists for Hindi
-        and Bhojpuri. It provides a starting point for learning
-        about language-specific preprocessing.
-      </p>
+<section id="lists"><h2><span>6</span>Stop-word lists</h2>
+<p>The complete lists are shown below. Words highlighted in colour appear in both lists.</p>
+<h3>Hindi (100 words)</h3><ul class="chips"><li class=s>aur</li><li class=s>lekin</li><li>ya</li><li>agar</li><li>to</li><li>jo</li><li class=s>ki</li><li>kyunki</li><li>isliye</li><li>magar</li><li>phir</li><li class=s>jab</li><li class=s>tab</li><li>yeh</li><li>woh</li><li>ye</li><li>ve</li><li>is</li><li>us</li><li>in</li><li>un</li><li>main</li><li>mujhe</li><li>mera</li><li>meri</li><li>mere</li><li>hum</li><li>humein</li><li>hamara</li><li>hamari</li><li>hamare</li><li>tum</li><li>tumhara</li><li>aap</li><li>aapka</li><li>aapki</li><li>aapke</li><li>uska</li><li>uski</li><li>uske</li><li>unka</li><li>unki</li><li>unke</li><li class=s>apna</li><li>apni</li><li class=s>apne</li><li class=s>ka</li><li class=s>ke</li><li class=s>mein</li><li class=s>se</li><li class=s>par</li><li>ko</li><li>liye</li><li>saath</li><li>dwara</li><li>tak</li><li class=s>bina</li><li class=s>baad</li><li>pehle</li><li>andar</li><li class=s>bahar</li><li class=s>upar</li><li>neeche</li><li>hai</li><li>hain</li><li>tha</li><li>thi</li><li>the</li><li class=s>ho</li><li>hoga</li><li>hogi</li><li>honge</li><li>hua</li><li>hui</li><li>hue</li><li>raha</li><li class=s>rahi</li><li class=s>rahe</li><li>kar</li><li>karna</li><li>kiya</li><li>kiye</li><li>sakta</li><li>sakti</li><li>sakte</li><li>kya</li><li class=s>kaun</li><li class=s>kaise</li><li class=s>kab</li><li class=s>kahan</li><li>kyon</li><li class=s>nahi</li><li>nahin</li><li class=s>na</li><li class=s>bhi</li><li>hi</li><li class=s>ek</li><li class=s>bahut</li><li class=s>kuch</li><li class=s>sab</li></ul>
+<h3>Bhojpuri (100 words)</h3><ul class="chips"><li>aa</li><li class=s>aur</li><li>bakir</li><li class=s>lekin</li><li>chahe</li><li>je</li><li>ta</li><li class=s>ki</li><li class=s>jab</li><li class=s>tab</li><li>ee</li><li>oo</li><li>eh</li><li>oh</li><li>ehi</li><li>ohi</li><li>ham</li><li>hamni</li><li>hamar</li><li>hamra</li><li>hamke</li><li>tu</li><li>tohar</li><li>tohra</li><li>tohni</li><li>tohke</li><li>raua</li><li>raura</li><li>okar</li><li>ekar</li><li>ohke</li><li>ehke</li><li class=s>apna</li><li class=s>apne</li><li class=s>ke</li><li class=s>mein</li><li>me</li><li class=s>se</li><li class=s>par</li><li>pe</li><li>le</li><li>khatir</li><li>sange</li><li>sath</li><li class=s>bina</li><li>pahile</li><li class=s>baad</li><li>bhitar</li><li class=s>bahar</li><li class=s>upar</li><li>niche</li><li>ba</li><li>bate</li><li>bani</li><li>bade</li><li>badu</li><li>badi</li><li class=s>rahe</li><li>rahal</li><li class=s>rahi</li><li>bhail</li><li>bhaili</li><li>bhaile</li><li>hola</li><li>hokhe</li><li>hoi</li><li>hoke</li><li>kare</li><li>karela</li><li>kail</li><li>sake</li><li>sakela</li><li class=s>ka</li><li>kahe</li><li class=s>kaise</li><li class=s>kab</li><li class=s>kahan</li><li>kawan</li><li>kehu</li><li>kekar</li><li class=s>kaun</li><li>kitna</li><li class=s>na</li><li>naikhe</li><li>naikhi</li><li class=s>nahi</li><li>mat</li><li class=s>bahut</li><li class=s>kuch</li><li class=s>sab</li><li>sabhe</li><li class=s>ek</li><li>aisan</li><li>oisan</li><li>jaisan</li><li>jekar</li><li>jahan</li><li>tahan</li><li class=s>bhi</li><li class=s>ho</li></ul>
+<p class="key"><i></i>Word present in both the Hindi and Bhojpuri lists</p></section>
 
-      <p class="meta">
-        Author: Aditya Kumar<br>
-        Department and Institution: Department of Humanities and Social Sciences, Indian Institute of Technology (Indian School of Mines), Dhanbad<br>
-        Semester: Monsoon Semester 2026
-      </p>
-    </section>
+<section id="observations"><h2><span>7</span>Observations</h2>
+<p>A comparison of the two lists gives the following observations.</p>
+<ul class="b">
+<li><strong>Shared words.</strong> 30 words appear in both lists. They include the postpositions <em>ke</em>, <em>mein</em>, <em>se</em> and <em>par</em>, the interrogatives <em>kaun</em>, <em>kaise</em>, <em>kab</em> and <em>kahan</em>, and quantifiers such as <em>bahut</em>, <em>kuch</em> and <em>sab</em>.</li>
+<li><strong>Pronouns.</strong> The pronoun forms differ. The Hindi list contains <em>main</em>, <em>hum</em>, <em>tum</em> and <em>aap</em>, whereas the Bhojpuri list contains <em>ham</em>, <em>hamni</em>, <em>tu</em>, <em>tohni</em> and <em>raua</em>.</li>
+<li><strong>Auxiliary verbs.</strong> Hindi forms such as <em>hai</em>, <em>hain</em>, <em>tha</em> and <em>thi</em> correspond to Bhojpuri forms such as <em>ba</em>, <em>bate</em>, <em>bani</em> and <em>rahal</em>.</li>
+<li><strong>Spelling.</strong> Because Roman spelling is not standardised, closely related forms occur in the lists, such as <em>nahi</em> and <em>nahin</em>.</li></ul></section>
 
-    <section id="languages">
-      <h2>Language Resources</h2>
+<section id="limitations"><h2><span>8</span>Limitations</h2>
+<ul class="b">
+<li>The lists are illustrative and are not exhaustive. A larger list could be built from a text corpus by counting word frequencies.</li>
+<li>Roman spellings of Hindi and Bhojpuri words vary between writers, so a word may appear in more than one form.</li>
+<li>Bhojpuri is spoken across several regions, and some forms may differ between speakers.</li>
+<li>Words such as negations can carry meaning in certain tasks, such as sentiment analysis, so removing stop words should be tested for each task.</li></ul></section>
 
-      <p>
-        Select a language to view its Python source file on GitHub.
-      </p>
+<section id="conclusion"><h2><span>9</span>Conclusion</h2>
+<p>This assignment produced two stop-word lists of 100 words each, one for Hindi and one for Bhojpuri, written in Roman letters and published as Python files in a GitHub repository. The comparison shows that the two languages share a core of function words, particularly postpositions, interrogatives and quantifiers, while their pronouns and auxiliary verbs differ. The lists can be used directly for text preprocessing and can be extended with further words and spelling variants.</p></section>
 
-      <div class="language-grid">
+<section id="references"><h2>References</h2>
+<ul class="b">
+<li><a href="https://docs.github.com/en/pages">GitHub Pages Documentation</a>: website publishing and hosting.</li>
+<li><a href="https://www.nltk.org/">Natural Language Toolkit (NLTK)</a>: NLP tools and documentation.</li></ul></section>
+</article></div>
 
-        <article class="language-card">
-          <h3>Hindi</h3>
-          <div class="script">Hindi (Roman Transliteration)</div>
-
-          <p>
-            An illustrative list of Hindi stop words written in
-            Roman letters for text preprocessing in NLP.
-          </p>
-
-          <p class="meta">File: hindi_stopwords.py</p>
-
-          <a class="file-link"
-             href="https://github.com/adityakumar190/hindi-bhojpuri-stopwords/blob/main/hindi_stopwords.py">
-            View Hindi Python File →
-          </a>
-        </article>
-
-        <article class="language-card">
-          <h3>Bhojpuri</h3>
-          <div class="script">Bhojpuri (Roman Transliteration)</div>
-
-          <p>
-            A preliminary list of Bhojpuri stop words written in
-            Roman letters. Regional usage and spelling variations
-            should be considered.
-          </p>
-
-          <p class="meta">File: bhojpuri_stopwords.py</p>
-
-          <a class="file-link"
-             href="https://github.com/adityakumar190/hindi-bhojpuri-stopwords/blob/main/bhojpuri_stopwords.py">
-            View Bhojpuri Python File →
-          </a>
-        </article>
-
-      </div>
-    </section>
-
-    <section id="methodology">
-      <h2>Methodology and Limitations</h2>
-
-      <p>
-        The stop-word lists are stored as Python lists of strings
-        written using Roman transliteration (English letters).
-        They are intended as illustrative resources for basic
-        text preprocessing in Natural Language Processing (NLP).
-      </p>
-
-      <p>
-        These lists should not be considered exhaustive or
-        linguistically validated. Bhojpuri has regional variation,
-        and Hindi and Bhojpuri words may overlap. A research
-        application should evaluate candidate words against a
-        representative corpus and the intended NLP task.
-      </p>
-
-      <div class="note">
-        <strong>Important:</strong>
-        Removing a word may change meaning or remove useful
-        grammatical information. Stop-word removal is optional,
-        not a universal requirement in NLP.
-      </div>
-    </section>
-
-    <section id="references">
-      <h2>References and Further Reading</h2>
-
-      <ul>
-        <li>
-          <a href="https://docs.github.com/en/pages">
-            GitHub Pages Documentation
-          </a>
-          — website publishing and hosting.
-        </li>
-        <li>
-          <a href="https://www.nltk.org/">
-            Natural Language Toolkit (NLTK)
-          </a>
-          — NLP tools and documentation.
-        </li>
-      </ul>
-
-      <p class="meta">
-        The word lists in this project are student-prepared
-        illustrative examples, not lists copied from these references.
-      </p>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      Hindi and Bhojpuri Stop Words · NLP Academic Project · 2026
-    </div>
-  </footer>
-
+<footer>Monsoon Semester 2026 &middot; [Enter Department and Institution Name]</footer>
 </body>
 </html>
