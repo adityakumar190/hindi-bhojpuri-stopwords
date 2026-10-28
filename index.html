@@ -64,7 +64,7 @@ footer{background:var(--ink);color:#c5cdf0;text-align:center;padding:1.6rem 1.25
   <h1>Indic Language Stop Words for Natural Language Processing</h1>
   <p class="sub">Hindi and Bhojpuri</p>
   <dl>
-    <div><dt>Author</dt><dd>Aditya Kumar</dd></div>
+    <div><dt>Name</dt><dd>Aditya Kumar</dd></div>
     <div><dt>Affiliation</dt><dd>Department of Humanities and Social Sciences <br>Indian Institute of Technology (Indian School of Mines), Dhanbad</dd></div>
     <div><dt>Semester</dt><dd>Monsoon Semester 2026</dd></div>
   </dl>
@@ -90,7 +90,7 @@ footer{background:var(--ink);color:#c5cdf0;text-align:center;padding:1.6rem 1.25
 </p></section>
 
 <section id="introduction"><h2><span>1</span>Introduction</h2>
-<p>Text written in any language contains a large number of words that occur very frequently but contribute little to the meaning of a sentence. These words, known as stop words, include conjunctions, pronouns, postpositions, auxiliary verbs and words of negation. In English, <em>and</em>, <em>the</em> and <em>is</em> are typical examples; in Hindi, <em>aur</em> (and) and <em>hai</em> (is) play the same role.</p>
+<p>Text written in any language contains a large number of words that occur very frequently but contribute little to the meaning of a sentence. These words, known as stop words, include conjunctions, pronouns, postpositions, and auxiliary verbs. In English, <em>and</em>, <em>the</em> and <em>is</em> are typical examples; in Hindi, <em>aur</em> (and) and <em>hai</em> (is) play the same role.</p>
 <p>In Natural Language Processing (NLP), stop words are commonly removed during text preprocessing. Doing so reduces the size of the vocabulary, lowers noise in the data, and allows tasks such as text classification, information retrieval and topic modelling to concentrate on content-bearing words.</p>
 <p>Hindi and Bhojpuri both belong to the Indo-Aryan branch of the Indo-European language family and are traditionally written in the Devanagari script. Because the two languages share part of their vocabulary and grammar while differing in many everyday forms, their function words offer a useful basis for comparison. This assignment therefore compiles and presents a stop-word list for each language.</p></section>
 
@@ -112,10 +112,10 @@ footer{background:var(--ink);color:#c5cdf0;text-align:center;padding:1.6rem 1.25
 <section id="method"><h2><span>4</span>Method</h2>
 <p>The lists were prepared in the following stages.</p>
 <ol class="n">
-<li><strong>Selection:</strong> Common function words were chosen for each language from the main grammatical groups: conjunctions, pronouns, postpositions, auxiliary verbs, interrogatives, negation and quantifiers. Where a word is common to both languages, it was placed in only one list, and the other list uses its own distinctive form.</li>
+<li><strong>Selection:</strong> Common function words were chosen for each language from the main grammatical groups: conjunctions, pronouns, postpositions, auxiliary verbs, interrogatives, and quantifiers. Where a word is common to both languages, it was placed in only one list, and the other list uses its own distinctive form.</li>
 <li><strong>Romanisation:</strong> Each word was written in Roman letters using commonly seen spellings (for example, <em>aur</em>, <em>tha</em> and <em>hai</em>). Variant spellings of a word, such as <em>nahi</em> and <em>nahin</em>, were both included where relevant.</li>
 <li><strong>Verification:</strong> Each list was checked to confirm that it contains exactly 100 entries and that no word is repeated within it or appears in the other list.</li>
-<li><strong>File preparation:</strong> The lists were saved as Python lists in files named <code>hindi_stopwords.py</code> and <code>bhojpuri_stopwords.py</code>, each beginning with the prescribed header describing the topic, authors, semester and affiliation.</li>
+<li><strong>File preparation:</strong> The lists were saved as Python lists in files named <code>hindi_stopwords.py</code> and <code>bhojpuri_stopwords.py</code></li>
 <li><strong>Publication:</strong> The files were uploaded to a GitHub repository, and this webpage was published with GitHub Pages.</li></ol></section>
 
 <section id="files"><h2><span>5</span>Project files</h2>
@@ -128,18 +128,17 @@ footer{background:var(--ink);color:#c5cdf0;text-align:center;padding:1.6rem 1.25
 <tr><td>index.html</td><td>This project webpage</td><td>&ndash;</td></tr></tbody></table></div></section>
 
 <section id="lists"><h2><span>6</span>Stop-word lists</h2>
-<p>The complete lists are shown below. No word appears in both lists.</p>
 <h3>Hindi (100 words)</h3><ul class="chips"><li>aur</li><li>lekin</li><li>ya</li><li>agar</li><li>to</li><li>jo</li><li>ki</li><li>kyunki</li><li>isliye</li><li>magar</li><li>phir</li><li>jab</li><li>tab</li><li>yeh</li><li>woh</li><li>ye</li><li>ve</li><li>is</li><li>us</li><li>in</li><li>un</li><li>main</li><li>mujhe</li><li>mera</li><li>meri</li><li>mere</li><li>hum</li><li>humein</li><li>hamara</li><li>hamari</li><li>hamare</li><li>tum</li><li>tumhara</li><li>aap</li><li>aapka</li><li>aapki</li><li>aapke</li><li>uska</li><li>uski</li><li>uske</li><li>unka</li><li>unki</li><li>unke</li><li>apna</li><li>apni</li><li>apne</li><li>ka</li><li>ke</li><li>mein</li><li>se</li><li>par</li><li>ko</li><li>liye</li><li>saath</li><li>dwara</li><li>tak</li><li>bina</li><li>baad</li><li>pehle</li><li>andar</li><li>bahar</li><li>upar</li><li>neeche</li><li>hai</li><li>hain</li><li>tha</li><li>thi</li><li>the</li><li>ho</li><li>hoga</li><li>hogi</li><li>honge</li><li>hua</li><li>hui</li><li>hue</li><li>raha</li><li>rahi</li><li>rahe</li><li>kar</li><li>karna</li><li>kiya</li><li>kiye</li><li>sakta</li><li>sakti</li><li>sakte</li><li>kya</li><li>kaun</li><li>kaise</li><li>kab</li><li>kahan</li><li>kyon</li><li>nahi</li><li>nahin</li><li>sirf</li><li>bhi</li><li>hi</li><li>ek</li><li>bahut</li><li>kuch</li><li>sab</li></ul>
 <h3>Bhojpuri (100 words)</h3><ul class="chips"><li>aa</li><li>au</li><li>awur</li><li>bakir</li><li>baakir</li><li>chahe</li><li>je</li><li>ta</li><li>tabo</li><li>jaun</li><li>ee</li><li>oo</li><li>eh</li><li>oh</li><li>ehi</li><li>ohi</li><li>ohni</li><li>ehni</li><li>ham</li><li>hamni</li><li>hamar</li><li>hamra</li><li>hamke</li><li>tu</li><li>tohar</li><li>tohra</li><li>tohni</li><li>tohke</li><li>toke</li><li>raua</li><li>raura</li><li>okar</li><li>ekar</li><li>ohke</li><li>ehke</li><li>apan</li><li>aapan</li><li>me</li><li>pe</li><li>sein</li><li>le</li><li>khatir</li><li>sange</li><li>sathe</li><li>lagi</li><li>bhitare</li><li>bahare</li><li>upare</li><li>niche</li><li>pahile</li><li>baade</li><li>binu</li><li>bin</li><li>taki</li><li>ba</li><li>baa</li><li>bate</li><li>bani</li><li>bade</li><li>badu</li><li>badi</li><li>baru</li><li>rahal</li><li>rahlas</li><li>rahlan</li><li>rahlu</li><li>hola</li><li>hokhe</li><li>hokhela</li><li>hoi</li><li>hoke</li><li>bhail</li><li>bhaili</li><li>bhaile</li><li>kail</li><li>kaile</li><li>kare</li><li>karela</li><li>karat</li><li>sake</li><li>sakela</li><li>kaa</li><li>kahe</li><li>kaisan</li><li>kawan</li><li>kekar</li><li>keke</li><li>kehu</li><li>kahwa</li><li>kitna</li><li>na</li><li>naikhe</li><li>naikhi</li><li>naikhan</li><li>sabhe</li><li>sabke</li><li>kuchu</li><li>tanik</li><li>dher</li><li>bahute</li></ul></section>
 
 <section id="observations"><h2><span>7</span>Observations</h2>
 <p>A comparison of the two lists gives the following observations.</p>
 <ul class="b">
-<li><strong>No common words.</strong> The two lists share no word. Where Hindi and Bhojpuri use the same word, it appears in the Hindi list only, and the Bhojpuri list uses its own form.</li>
-<li><strong>Postpositions.</strong> The Hindi list contains <em>ka</em>, <em>ke</em>, <em>ki</em>, <em>mein</em>, <em>se</em> and <em>par</em>, whereas the Bhojpuri list contains <em>me</em>, <em>pe</em>, <em>sein</em>, <em>le</em>, <em>khatir</em> and <em>sange</em>.</li>
-<li><strong>Pronouns.</strong> The Hindi list contains <em>main</em>, <em>hum</em>, <em>tum</em> and <em>aap</em>, whereas the Bhojpuri list contains <em>ham</em>, <em>hamni</em>, <em>tu</em>, <em>tohni</em> and <em>raua</em>.</li>
-<li><strong>Auxiliary verbs.</strong> Hindi forms such as <em>hai</em>, <em>hain</em>, <em>tha</em> and <em>thi</em> correspond to Bhojpuri forms such as <em>ba</em>, <em>bate</em>, <em>bani</em> and <em>rahal</em>.</li>
-<li><strong>Spelling.</strong> Because Roman spelling is not standardised, closely related forms occur within the lists, such as <em>nahi</em> and <em>nahin</em> in Hindi.</li></ul></section>
+<li><strong>No common words:</strong> The two lists share no word. Where Hindi and Bhojpuri use the same word, it appears in the Hindi list only, and the Bhojpuri list uses its own form.</li>
+<li><strong>Postpositions:</strong> The Hindi list contains <em>ka</em>, <em>ke</em>, <em>ki</em>, <em>mein</em>, <em>se</em> and <em>par</em>, whereas the Bhojpuri list contains <em>me</em>, <em>pe</em>, <em>sein</em>, <em>le</em>, <em>khatir</em> and <em>sange</em>.</li>
+<li><strong>Pronouns:</strong> The Hindi list contains <em>main</em>, <em>hum</em>, <em>tum</em> and <em>aap</em>, whereas the Bhojpuri list contains <em>ham</em>, <em>hamni</em>, <em>tu</em>, <em>tohni</em> and <em>raua</em>.</li>
+<li><strong>Auxiliary verbs:</strong> Hindi forms such as <em>hai</em>, <em>hain</em>, <em>tha</em> and <em>thi</em> correspond to Bhojpuri forms such as <em>ba</em>, <em>bate</em>, <em>bani</em> and <em>rahal</em>.</li>
+<li><strong>Spelling:</strong> Because Roman spelling is not standardised, closely related forms occur within the lists, such as <em>nahi</em> and <em>nahin</em> in Hindi.</li></ul></section>
 
 <section id="limitations"><h2><span>8</span>Limitations</h2>
 <ul class="b">
