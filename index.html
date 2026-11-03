@@ -91,6 +91,7 @@ textarea{width:100%;font:1.1rem/1.5 var(--serif);padding:.7rem .9rem;border:1px 
 .out{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:1rem 1.2rem;font-size:1.25rem;line-height:2;min-height:4rem}
 .out .th{color:var(--hi);text-decoration:line-through;background:#e8ebfa;border-radius:4px;padding:0 .25rem}
 .out .tb{color:var(--bh);text-decoration:line-through;background:#dff1f1;border-radius:4px;padding:0 .25rem;border-bottom:2px dashed var(--bh)}
+.rq{background:var(--band);border-left:5px solid var(--bh);padding:.9rem 1.2rem;border-radius:0 8px 8px 0;text-align:left}
 .stat{font:.95rem var(--sans);color:var(--muted)}
 footer{background:var(--ink);color:#c5cdf0;text-align:center;padding:1.6rem 1.25rem;font:.95rem var(--sans)}
 footer a{color:#fff}
@@ -140,12 +141,13 @@ footer a{color:#fff}
 </ol></nav>
 
 <article>
-<section id="abstract" class="abs"><h2>Abstract</h2><p>This project documents the compilation of stop-word lists for two Indo-Aryan languages, Hindi and Bhojpuri, to support text preprocessing in Natural Language Processing (NLP). For each language, 100 unique stop words were compiled in Roman letters, transliterated from Devanagari, and stored as Python files in a GitHub repository with an accompanying GitHub Pages website. The two lists are mutually exclusive: a word common to both languages is placed in one list only, and the other list uses its own distinctive form. Common variant spellings are included to improve practical usefulness.</p></section>
+<section id="abstract" class="abs"><h2>Abstract</h2><p>This project documents the compilation of stop-word lists for two Indo-Aryan languages, Hindi and Bhojpuri, to support text preprocessing in Natural Language Processing (NLP). For each language, 100 unique stop words were compiled in Roman letters, transliterated from Devanagari, and stored as Python files in a GitHub repository with an accompanying GitHub Pages website. The two lists are mutually exclusive: a word common to both languages is placed in one list only, and the other list uses its own distinctive form. Common variant spellings are included to improve practical usefulness. The two lists are then compared to show how the postpositions, pronouns and auxiliary verbs of the two languages differ.</p></section>
 
 <section id="introduction"><h2><span>1</span>Introduction</h2>
 <p>Text in any language contains many words that occur very frequently but contribute little to the meaning of a sentence. These words, known as stop words, include conjunctions, pronouns, postpositions, and auxiliary verbs. In English, <em>and</em>, <em>the</em> and <em>is</em> are typical examples; in Hindi, <em>aur</em> (and) and <em>hai</em> (is) play the same role.</p>
 <p>In NLP, stop words are commonly removed during preprocessing. Doing so reduces the size of the vocabulary and the noise in the data, and lets tasks such as text classification, information retrieval and topic modelling concentrate on content-bearing words.</p>
-<p>Hindi and Bhojpuri both belong to the Indo-Aryan branch of the Indo-European language family and are traditionally written in the Devanagari script. Because the two languages share part of their vocabulary and grammar while differing in many everyday forms, their function words offer a useful basis for comparison. This assignment therefore compiles and presents a stop-word list for each language.</p></section>
+<p>Hindi and Bhojpuri both belong to the Indo-Aryan branch of the Indo-European language family and are traditionally written in the Devanagari script. Because the two languages share part of their vocabulary and grammar while differing in many everyday forms, their function words offer a useful basis for comparison. This assignment therefore compiles a stop-word list for each language and uses the two lists to address a research question.</p>
+<p class="rq"><strong>Research question:</strong> How do the stop words of Hindi and Bhojpuri differ in their postpositions, pronouns and auxiliary verbs, and what do these differences mean for building a stop-word list for each language?</p></section>
 
 <section id="objectives"><h2><span>2</span>Objectives</h2>
 <ol class="n">
@@ -153,7 +155,7 @@ footer a{color:#fff}
 <li>To write the words in Roman (English) letters so that they can be used in any standard text-processing environment.</li>
 <li>To store each list in a separate Python file named after its language.</li>
 <li>To publish the files in a public GitHub repository and present the work on a webpage hosted through GitHub Pages.</li>
-<li>To examine how the function-word forms of the two languages differ, using the two lists as evidence.</li></ol></section>
+<li>To answer the research question by comparing the postpositions, pronouns and auxiliary verbs in the two lists (Section 7).</li></ol></section>
 
 <section id="languages"><h2><span>3</span>Languages</h2>
 <p>Table 1 summarises the two languages and the way each is represented in this project.</p>
@@ -180,6 +182,8 @@ footer a{color:#fff}
 <tr><td><code>bhojpuri_stopwords.py</code></td><td>Python list <code>bhojpuri_stopwords</code></td><td>100</td></tr>
 <tr><td><code>index.html</code></td><td>This project webpage</td><td>&ndash;</td></tr>
 <tr><td><code>README.md</code></td><td>Project description and usage instructions</td><td>&ndash;</td></tr></tbody></table></div>
+<div class="repo"><span>Source files, history and the README are available in the repository.</span>
+<a class="btn" href="https://github.com/adityakumar190/hindi-bhojpuri-stopwords" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>Open repository</a></div></section>
 
 <section id="lexicon"><h2><span>6</span>Stop-word lists</h2>
 <p>The two lists are shown side by side so that equivalent word types can be compared. Choose a grammatical category to see the Hindi and Bhojpuri words of that type together, or search for a word.</p>
@@ -250,13 +254,14 @@ print([t for t in tokens if t not in stop])   # ['gaon', 'bihar']</code></pre>
 <li>Negations can carry meaning in some tasks, such as sentiment analysis, so stop-word removal should be tested for each task.</li></ul></section>
 
 <section id="conclusion"><h2><span>10</span>Conclusion</h2>
-<p>This assignment produced two stop-word lists of 100 words each, one for Hindi and one for Bhojpuri, written in Roman letters and published as Python files in a GitHub repository. Because no word appears in both lists, they bring out the distinctive postpositions, pronouns and auxiliary verbs of each language. They can be used directly for text preprocessing and extended with further words and spelling variants.</p></section>
+<p>This assignment produced two stop-word lists of 100 words each, one for Hindi and one for Bhojpuri, written in Roman letters and published as Python files in a GitHub repository. Because no word appears in both lists, they bring out the distinctive postpositions, pronouns and auxiliary verbs of each language. They can be used directly for text preprocessing and extended with further words and spelling variants.</p>
+<p>The lists show that the two languages differ most in their postpositions and verb forms. Hindi marks relations with <em>ka</em>, <em>ke</em>, <em>mein</em> and <em>par</em>, where Bhojpuri uses <em>me</em>, <em>pe</em>, <em>sein</em> and <em>khatir</em>. The Bhojpuri list has more auxiliary-verb entries than the Hindi list (27 against 22), because it records several forms of &ldquo;to be&rdquo;, while the Hindi list has more pronoun entries (33 against 27). A separate list for each language is therefore justified, but because the evidence comes from short illustrative lists, these findings should be confirmed on a larger corpus.</p></section>
 
 <section id="references"><h2>References</h2>
 <ul class="b"><li><a href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">GitHub Pages Documentation</a>: Website Publishing and Hosting</li></ul></section>
 </article></div>
 
-<footer>Monsoon Semester 2026 &middot; Department of HSS, IIT (ISM) Dhanbad</footer>
+<footer>Monsoon Semester 2026 &middot; Department of HSS, IIT (ISM) Dhanbad &middot; <a href="https://github.com/adityakumar190/hindi-bhojpuri-stopwords" target="_blank" rel="noopener noreferrer">GitHub repository</a></footer>
 
 <script>
 const H="aur lekin ya agar to jo ki kyunki isliye magar phir jab tab yeh woh ye ve is us in un main mujhe mera meri mere hum humein hamara hamari hamare tum tumhara aap aapka aapki aapke uska uski uske unka unki unke apna apni apne ka ke mein se par ko liye saath dwara tak bina baad pehle andar bahar upar neeche hai hain tha thi the ho hoga hogi honge hua hui hue raha rahi rahe kar karna kiya kiye sakta sakti sakte kya kaun kaise kab kahan kyon nahi nahin sirf bhi hi ek bahut kuch sab".split(" ");
