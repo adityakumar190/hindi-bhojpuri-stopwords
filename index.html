@@ -5,69 +5,122 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Indic Language Stop Words for NLP: Hindi and Bhojpuri</title>
 <meta name="description" content="Stop-word lists of 100 words each for Hindi and Bhojpuri, written in Roman letters, for NLP text preprocessing.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Noto+Serif+Devanagari:wght@500&display=swap">
 <style>
-:root{--ink:#1f2a5c;--ink2:#2f3d82;--teal:#0e6b72;--text:#1f2330;--muted:#596075;--rule:#d3d8e8;--band:#eef1f8;--paper:#fcfcfe}
+:root{--ink:#1a2250;--hi:#34439a;--bh:#0b6b6f;--gold:#d99a00;--text:#1e2230;--muted:#5a6177;--rule:#d5d9e6;--band:#eef0f7;--paper:#fafbfd;--serif:Newsreader,Georgia,serif;--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;--dev:"Noto Serif Devanagari","Nirmala UI",serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:1.5rem}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--paper);color:var(--text);font-family:Georgia,"Times New Roman",serif;font-size:1.14rem;line-height:1.75}
-a{color:var(--teal);text-underline-offset:3px}
-a:focus-visible{outline:3px solid #e0a800;outline-offset:3px;border-radius:2px}
-.hero{background:linear-gradient(135deg,#18214b 0%,var(--ink2) 100%);color:#fff;padding:0 1.25rem 3rem;border-top:10px solid var(--teal)}
-.hero .in{max-width:70rem;margin:0 auto;padding-top:2.6rem}
-.hero .kind{font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;font-size:1rem;color:#bfc9ee;margin:0 0 1rem;letter-spacing:.02em}
-.hero h1{font-weight:600;font-size:clamp(2rem,5vw,3.3rem);line-height:1.15;margin:0;max-width:20em;padding-top:1.1rem;border-top:4px solid #fff}
-.hero .sub{font-size:1.3rem;color:#d6ddf7;margin:.9rem 0 1.8rem;font-style:italic}
-.hero dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1rem 2rem;margin:0 0 1.8rem;max-width:52rem;font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif}
-.hero dt{font-size:.88rem;color:#aab6e6}
-.hero dd{margin:.1rem 0 0;font-size:1.05rem}
-.btns{display:flex;flex-wrap:wrap;gap:.8rem;font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif}
-.btns a{color:#fff;border:1.5px solid #8f9fe0;padding:.55rem 1.1rem;border-radius:6px;text-decoration:none;font-weight:600}
-.btns a:first-child{background:#fff;color:var(--ink);border-color:#fff}
-.btns a:hover{background:#e6ebff;color:var(--ink)}
-.page{max-width:70rem;margin:0 auto;padding:2.5rem 1.25rem 3rem;display:grid;grid-template-columns:13.5rem minmax(0,1fr);gap:3.5rem}
-.toc{position:sticky;top:1.5rem;align-self:start;font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;font-size:.97rem}
+body{margin:0;background:var(--paper);color:var(--text);font:1.14rem/1.75 var(--serif)}
+a{color:var(--bh);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:3px}
+.sans{font-family:var(--sans)}
+/* hero */
+.hero{background:var(--ink);color:#fff;padding:3rem 1.25rem 3.2rem;border-bottom:6px solid var(--gold)}
+.hero .in{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:3rem;align-items:center}
+.kind{font:500 1rem var(--sans);color:#b9c3ee;margin:0 0 1rem}
+h1{font-weight:600;font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.12;margin:0}
+.sub{font-size:1.3rem;color:#d3daf7;font-style:italic;margin:.8rem 0 1.6rem}
+.hero dl{display:grid;gap:.7rem;margin:0 0 1.8rem;font-family:var(--sans)}
+.hero dt{font-size:.85rem;color:#a9b5e6}.hero dd{margin:0;font-size:1rem}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem;font-family:var(--sans)}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.6rem 1.1rem;border-radius:6px;font-weight:600;text-decoration:none;border:1.5px solid #8f9fe0;color:#fff}
+.btn svg{width:1.2rem;height:1.2rem;fill:currentColor}
+.btn.main{background:#fff;color:var(--ink);border-color:#fff}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#1a1400}
+.spec{background:var(--paper);color:var(--text);border-radius:10px;padding:1.4rem 1.6rem;box-shadow:0 0 0 1px #fff3,8px 8px 0 var(--gold)}
+.spec h2{all:unset;display:block;font:500 .95rem var(--sans);color:var(--muted);margin-bottom:.9rem}
+.spec .row{padding:.8rem 0;border-top:1px solid var(--rule)}
+.spec .row:first-of-type{border-top:0}
+.spec .lang{font:500 .9rem var(--sans);color:var(--muted)}.spec .lang b{font:500 1.1rem var(--dev);color:var(--ink);margin-right:.4rem}
+.spec .s{font-size:1.5rem;line-height:1.5}
+.spec .s span{margin-right:.35rem}
+.sw{color:#8a90a6;text-decoration:line-through}.ct{font-weight:600;color:var(--ink)}
+.spec p{font:.88rem/1.5 var(--sans);color:var(--muted);margin:.9rem 0 0;text-align:left}
+/* layout */
+.page{max-width:72rem;margin:0 auto;padding:2.5rem 1.25rem 3rem;display:grid;grid-template-columns:13rem minmax(0,1fr);gap:3rem}
+.toc{position:sticky;top:1.5rem;align-self:start;font:.95rem var(--sans)}
 .toc p{margin:0 0 .6rem;font-weight:600;color:var(--ink)}
 .toc ol{list-style:none;margin:0;padding:0;border-left:2px solid var(--rule)}
-.toc span{display:block;padding:.28rem 0 .28rem .9rem;margin-left:-2px;border-left:2px solid transparent;color:var(--muted);text-decoration:none}
-article{max-width:46rem}
+.toc a{display:block;padding:.26rem 0 .26rem .9rem;margin-left:-2px;border-left:3px solid transparent;color:var(--muted);text-decoration:none}
+.toc a:hover{color:var(--ink)}
+.toc a[aria-current]{color:var(--ink);font-weight:600;border-left-color:var(--gold)}
+article{max-width:50rem;min-width:0}
 section{margin-bottom:3rem}
 h2{font-size:1.7rem;font-weight:600;color:var(--ink);line-height:1.25;margin:0 0 1rem;padding-top:.8rem;border-top:3px solid var(--ink)}
-h2 span{color:var(--teal);margin-right:.5rem}
-h3{font-size:1.2rem;color:var(--ink);margin:1.8rem 0 .4rem}
+h2 span{color:var(--bh);margin-right:.55rem}
+h3{font-size:1.2rem;color:var(--ink);margin:1.6rem 0 .4rem}
 p{margin:.8rem 0;text-align:justify;hyphens:auto}
-.abs{background:var(--band);border-left:5px solid var(--teal);padding:1.2rem 1.5rem;border-radius:0 8px 8px 0}
+.abs{background:var(--band);border-left:5px solid var(--gold);padding:1.2rem 1.5rem;border-radius:0 8px 8px 0}
 .abs h2{border:0;padding:0;font-size:1.3rem;margin-bottom:.3rem}
-ol.n,ul.b{padding-left:1.5rem}
-li{margin:.45rem 0}
-.tw{overflow-x:auto;margin:1.2rem 0;border:1px solid var(--rule);border-radius:8px}
-table{border-collapse:collapse;width:100%;font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;font-size:.98rem;line-height:1.5}
-caption{caption-side:top;text-align:left;padding:.7rem .9rem;font-style:italic;font-family:Georgia,"Times New Roman",serif;color:var(--muted);font-size:1rem}
-th,td{padding:.65rem .9rem;text-align:left;vertical-align:top;border-top:1px solid var(--rule)}
+ol.n,ul.b{padding-left:1.5rem}li{margin:.45rem 0}
+.tw{overflow-x:auto;margin:1.2rem 0;border:1px solid var(--rule);border-radius:8px;background:#fff}
+table{border-collapse:collapse;width:100%;font:.97rem/1.5 var(--sans)}
+caption{caption-side:top;text-align:left;padding:.7rem .9rem;font:italic 1rem var(--serif);color:var(--muted)}
+th,td{padding:.6rem .9rem;text-align:left;vertical-align:top;border-top:1px solid var(--rule)}
 th{background:var(--band);color:var(--ink);font-weight:600}
-.chips{list-style:none;display:flex;flex-wrap:wrap;gap:.45rem;padding:0;margin:1rem 0}
-.chips li{margin:0;padding:.18rem .75rem;border:1px solid var(--rule);background:#fff;border-radius:999px;font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;font-size:.95rem}
-.chips li.s{background:#dcf0f1;border-color:#9fcfd2;color:#0a4b50}
-.key{font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;font-size:.92rem;color:var(--muted)}
-.key i{display:inline-block;width:.9rem;height:.9rem;border-radius:50%;background:#dcf0f1;border:1px solid #9fcfd2;vertical-align:-2px;margin-right:.3rem}
-code{font-family:Consolas,"Courier New",monospace;font-size:.92em;background:var(--band);padding:.1rem .35rem;border-radius:4px}
-footer{background:var(--ink);color:#c5cdf0;text-align:center;padding:1.6rem 1.25rem;font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;font-size:.95rem}
-@media (max-width:62rem){.page{grid-template-columns:1fr;gap:1.5rem}.toc{position:static}.toc ol{display:flex;flex-wrap:wrap;gap:0 1.2rem;border:0}.toc span{border:0;padding:.2rem 0;margin:0}}
-@media print{.toc,.btns{display:none}.hero{background:#fff;color:#000;border-top:4px solid #000}.hero h1{border-color:#000}.hero .sub,.hero dt,.hero .kind{color:#333}.page{display:block}}
-.toc a{display:block;padding:.28rem 0 .28rem .9rem;margin-left:-2px;border-left:2px solid transparent;color:var(--muted);text-decoration:none}
-.toc a:hover{color:var(--ink);text-decoration:none}
+td.h{color:var(--hi)}td.b{color:var(--bh)}
+code{font:.9em Consolas,"Courier New",monospace;background:var(--band);padding:.1rem .35rem;border-radius:4px}
+pre{background:#161b3d;color:#e4e8ff;padding:1rem 1.2rem;border-radius:8px;overflow-x:auto;font:.9rem/1.6 Consolas,"Courier New",monospace}
+pre code{background:none;padding:0}
+.repo{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;border:1px solid var(--rule);background:#fff;border-radius:8px;padding:1rem 1.2rem;font-family:var(--sans)}
+.repo .btn{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* explorer */
+.ui{font-family:var(--sans);font-size:.95rem}
+.ctl{display:flex;flex-wrap:wrap;gap:.45rem;margin:1rem 0}
+.ctl button,.ctl label.pill{font:inherit;padding:.3rem .8rem;border:1px solid var(--rule);background:#fff;color:var(--text);border-radius:999px;cursor:pointer}
+.ctl button[aria-pressed=true],.ctl input:checked+span{background:var(--ink);color:#fff;border-color:var(--ink)}
+.vh{position:absolute;opacity:0;width:1px;height:1px}
+.ctl label.pill{position:relative}.ctl input:focus-visible+span{outline:3px solid var(--gold);outline-offset:3px;border-radius:999px}
+.q{font:inherit;padding:.5rem .8rem;border:1px solid var(--rule);border-radius:6px;width:100%;max-width:20rem;margin-bottom:.4rem}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.col{border-top:4px solid;padding-top:.5rem}.col.h{border-color:var(--hi)}.col.b{border-color:var(--bh)}
+.col h3{margin:.2rem 0 .6rem;font-family:var(--sans);font-size:1rem;display:flex;justify-content:space-between}
+.col h3 em{font-style:normal;color:var(--muted);font-weight:400}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:0;min-height:3rem;align-content:flex-start}
+.chips li{margin:0;padding:.1rem .65rem;border-radius:999px;background:#fff;border:1px solid}
+.col.h .chips li{border-color:#aab3e3;color:var(--hi)}.col.b .chips li{border-color:#8fcacd;color:var(--bh);border-style:dashed}
+.fig .bar{display:grid;grid-template-columns:9.5rem 1fr 1fr;gap:.5rem 1rem;align-items:center;font:.9rem var(--sans);margin:.3rem 0}
+.fig .t{display:flex;align-items:center;gap:.5rem}.fig .t i{height:.8rem;display:block;border-radius:2px;min-width:2px}
+.fig .t span{color:var(--muted)}
+.leg{font:.9rem var(--sans);color:var(--muted)}
+.leg b{display:inline-block;width:.9rem;height:.9rem;border-radius:3px;vertical-align:-2px;margin:0 .3rem 0 .8rem}
+/* demo */
+textarea{width:100%;font:1.1rem/1.5 var(--serif);padding:.7rem .9rem;border:1px solid var(--rule);border-radius:8px;resize:vertical}
+.out{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:1rem 1.2rem;font-size:1.25rem;line-height:2;min-height:4rem}
+.out .th{color:var(--hi);text-decoration:line-through;background:#e8ebfa;border-radius:4px;padding:0 .25rem}
+.out .tb{color:var(--bh);text-decoration:line-through;background:#dff1f1;border-radius:4px;padding:0 .25rem;border-bottom:2px dashed var(--bh)}
+.stat{font:.95rem var(--sans);color:var(--muted)}
+footer{background:var(--ink);color:#c5cdf0;text-align:center;padding:1.6rem 1.25rem;font:.95rem var(--sans)}
+footer a{color:#fff}
+@media (max-width:62rem){.hero .in,.page{grid-template-columns:1fr;gap:1.8rem}.toc{position:static}.toc ol{display:flex;flex-wrap:wrap;gap:0 1.2rem;border:0}.toc a{border:0;padding:.2rem 0;margin:0}}
+@media (max-width:40rem){.cols{grid-template-columns:1fr}.fig .bar{grid-template-columns:1fr}p{text-align:left}}
+@media print{.toc,.btns,.ctl,.q,textarea{display:none}.hero{background:#fff;color:#000}.hero .kind,.hero dt,.sub{color:#333}.page{display:block}}
 </style>
 </head>
 <body>
 <header class="hero"><div class="in">
-  <p class="kind">Digital Humanities Lab</p>
+ <div>
+  <p class="kind">Natural Language Processing &middot; Course Assignment</p>
   <h1>Indic Language Stop Words for Natural Language Processing</h1>
   <p class="sub">Hindi and Bhojpuri</p>
   <dl>
-    <div><dt>Name</dt><dd>Aditya Kumar</dd></div>
-    <div><dt>Affiliation</dt><dd>Department of Humanities and Social Sciences <br>Indian Institute of Technology (Indian School of Mines), Dhanbad</dd></div>
-    <div><dt>Semester</dt><dd>Monsoon Semester 2026</dd></div>
+   <div><dt>Name</dt><dd>Aditya Kumar</dd></div>
+   <div><dt>Affiliation</dt><dd>Department of Humanities and Social Sciences, Indian Institute of Technology (Indian School of Mines), Dhanbad</dd></div>
+   <div><dt>Semester</dt><dd>Monsoon Semester 2026</dd></div>
   </dl>
+  <div class="btns">
+   <a class="btn main" href="https://github.com/adityakumar190/hindi-bhojpuri-stopwords" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub</a>
+   <a class="btn" href="#lexicon">Explore the word lists</a>
+  </div>
+ </div>
+ <aside class="spec" aria-label="Example of stop-word removal">
+  <h2>What a stop-word list does</h2>
+  <div class="row"><div class="lang"><b lang="hi">हिन्दी</b>Hindi</div><div class="s"><span class="sw">mera</span><span class="ct">gaon</span><span class="ct">Bihar</span><span class="sw">mein</span><span class="sw">hai</span></div></div>
+  <div class="row"><div class="lang"><b lang="bho">भोजपुरी</b>Bhojpuri</div><div class="s"><span class="sw">hamar</span><span class="ct">gaon</span><span class="ct">Bihar</span><span class="sw">me</span><span class="sw">ba</span></div></div>
+  <p>Struck-through words are stop words and are removed. The words that remain, <em>gaon</em> (village) and <em>Bihar</em>, carry the meaning of the sentence.</p>
+ </aside>
 </div></header>
 
 <div class="page">
@@ -78,27 +131,27 @@ footer{background:var(--ink);color:#c5cdf0;text-align:center;padding:1.6rem 1.25
  <li><a href="#languages">3. Languages</a></li>
  <li><a href="#method">4. Method</a></li>
  <li><a href="#files">5. Project files</a></li>
- <li><a href="#stopwords">6. Stop-word lists</a></li>
+ <li><a href="#lexicon">6. Stop-word lists</a></li>
  <li><a href="#observations">7. Observations</a></li>
- <li><a href="#limitations">8. Limitations</a></li>
- <li><a href="#conclusion">9. Conclusion</a></li>
+ <li><a href="#demo">8. Demonstration</a></li>
+ <li><a href="#limitations">9. Limitations</a></li>
+ <li><a href="#conclusion">10. Conclusion</a></li>
  <li><a href="#references">References</a></li>
- </ol></nav>
+</ol></nav>
 
 <article>
-<section id="abstract" class="abs"><h2>Abstract</h2><p>This project documents the compilation of stop-word lists for two Indo-Aryan languages, Hindi and Bhojpuri, to aid in Natural Language Processing (NLP) text preprocessing. For each language, 100 unique stop words were compiled in Roman letters, transliterated from Devanagari, and deployed as Python files in a GitHub repository with an accompanying GitHub Pages website. The two lists were kept mutually exclusive: words common to both languages were assigned to a single list, ensuring the alternative list utilized its own distinctive forms. Additionally, the dataset accounts for variation in Romanized spellings to maximize practical utility.
-</p></section>
+<section id="abstract" class="abs"><h2>Abstract</h2><p>This project documents the compilation of stop-word lists for two Indo-Aryan languages, Hindi and Bhojpuri, to support text preprocessing in Natural Language Processing (NLP). For each language, 100 unique stop words were compiled in Roman letters, transliterated from Devanagari, and stored as Python files in a GitHub repository with an accompanying GitHub Pages website. The two lists are mutually exclusive: a word common to both languages is placed in one list only, and the other list uses its own distinctive form. Common variant spellings are included to improve practical usefulness.</p></section>
 
 <section id="introduction"><h2><span>1</span>Introduction</h2>
-<p>Text written in any language contains a large number of words that occur very frequently but contribute little to the meaning of a sentence. These words, known as stop words, include conjunctions, pronouns, postpositions, and auxiliary verbs. In English, <em>and</em>, <em>the</em> and <em>is</em> are typical examples; in Hindi, <em>aur</em> (and) and <em>hai</em> (is) play the same role.</p>
-<p>In Natural Language Processing (NLP), stop words are commonly removed during text preprocessing. Doing so reduces the size of the vocabulary, lowers noise in the data, and allows tasks such as text classification, information retrieval and topic modelling to concentrate on content-bearing words.</p>
+<p>Text in any language contains many words that occur very frequently but contribute little to the meaning of a sentence. These words, known as stop words, include conjunctions, pronouns, postpositions, and auxiliary verbs. In English, <em>and</em>, <em>the</em> and <em>is</em> are typical examples; in Hindi, <em>aur</em> (and) and <em>hai</em> (is) play the same role.</p>
+<p>In NLP, stop words are commonly removed during preprocessing. Doing so reduces the size of the vocabulary and the noise in the data, and lets tasks such as text classification, information retrieval and topic modelling concentrate on content-bearing words.</p>
 <p>Hindi and Bhojpuri both belong to the Indo-Aryan branch of the Indo-European language family and are traditionally written in the Devanagari script. Because the two languages share part of their vocabulary and grammar while differing in many everyday forms, their function words offer a useful basis for comparison. This assignment therefore compiles and presents a stop-word list for each language.</p></section>
 
 <section id="objectives"><h2><span>2</span>Objectives</h2>
 <ol class="n">
-<li>To compile a list of 100 unique stop words for Hindi and a list of 100 unique stop words for Bhojpuri, with no word common to the two lists.</li>
+<li>To compile 100 unique stop words for Hindi and 100 for Bhojpuri, with no word common to the two lists.</li>
 <li>To write the words in Roman (English) letters so that they can be used in any standard text-processing environment.</li>
-<li>To store each list in a separate Python file named after its language, following the prescribed file format.</li>
+<li>To store each list in a separate Python file named after its language.</li>
 <li>To publish the files in a public GitHub repository and present the work on a webpage hosted through GitHub Pages.</li>
 <li>To examine how the function-word forms of the two languages differ, using the two lists as evidence.</li></ol></section>
 
@@ -106,16 +159,16 @@ footer{background:var(--ink);color:#c5cdf0;text-align:center;padding:1.6rem 1.25
 <p>Table 1 summarises the two languages and the way each is represented in this project.</p>
 <div class="tw"><table><caption>Table 1. Languages included in the project</caption>
 <thead><tr><th>Language</th><th>Family</th><th>Traditional script</th><th>Script used here</th><th>Words</th></tr></thead>
-<tbody><tr><td>Hindi</td><td>Indo-Aryan</td><td>Devanagari</td><td>Roman (Latin)</td><td>100</td></tr>
-<tr><td>Bhojpuri</td><td>Indo-Aryan</td><td>Devanagari</td><td>Roman (Latin)</td><td>100</td></tr></tbody></table></div></section>
+<tbody><tr><td>Hindi (<span lang="hi">हिन्दी</span>)</td><td>Indo-Aryan</td><td>Devanagari</td><td>Roman (Latin)</td><td>100</td></tr>
+<tr><td>Bhojpuri (<span lang="bho">भोजपुरी</span>)</td><td>Indo-Aryan</td><td>Devanagari</td><td>Roman (Latin)</td><td>100</td></tr></tbody></table></div></section>
 
 <section id="method"><h2><span>4</span>Method</h2>
-<p>The lists were prepared in the following stages.</p>
+<p>The lists were prepared in five stages.</p>
 <ol class="n">
-<li><strong>Selection:</strong> Common function words were chosen for each language from the main grammatical groups: conjunctions, pronouns, postpositions, auxiliary verbs, interrogatives, and quantifiers. Where a word is common to both languages, it was placed in only one list, and the other list uses its own distinctive form.</li>
-<li><strong>Romanisation:</strong> Each word was written in Roman letters using commonly seen spellings (for example, <em>aur</em>, <em>tha</em> and <em>hai</em>). Variant spellings of a word, such as <em>nahi</em> and <em>nahin</em>, were both included where relevant.</li>
-<li><strong>Verification:</strong> Each list was checked to confirm that it contains exactly 100 entries and that no word is repeated within it or appears in the other list.</li>
-<li><strong>File preparation:</strong> The lists were saved as Python lists in files named <code>hindi_stopwords.py</code> and <code>bhojpuri_stopwords.py</code></li>
+<li><strong>Selection:</strong> Common function words were chosen for each language from six grammatical groups: conjunctions, pronouns, postpositions, auxiliary verbs, interrogatives, and negations and quantifiers. A word common to both languages was placed in one list only, and the other list uses its own distinctive form.</li>
+<li><strong>Romanisation:</strong> Each word was written in Roman letters using commonly seen spellings (for example, <em>aur</em>, <em>tha</em> and <em>hai</em>). Variant spellings, such as <em>nahi</em> and <em>nahin</em>, were both included where relevant.</li>
+<li><strong>Verification:</strong> Each list was checked to confirm that it has exactly 100 entries, that no word is repeated within it, and that no word appears in the other list.</li>
+<li><strong>File preparation:</strong> The lists were saved as Python lists in <code>hindi_stopwords.py</code> and <code>bhojpuri_stopwords.py</code>.</li>
 <li><strong>Publication:</strong> The files were uploaded to a GitHub repository, and this webpage was published with GitHub Pages.</li></ol></section>
 
 <section id="files"><h2><span>5</span>Project files</h2>
@@ -123,39 +176,121 @@ footer{background:var(--ink);color:#c5cdf0;text-align:center;padding:1.6rem 1.25
 <div class="tw"><table><caption>Table 2. Files in the repository</caption>
 <thead><tr><th>File</th><th>Content</th><th>Entries</th></tr></thead>
 <tbody>
-<tr><td>hindi_stopwords.py</td><td>Python list <code>hindi_stopwords</code></td><td>100</td></tr>
-<tr><td>bhojpuri_stopwords.py</td><td>Python list <code>bhojpuri_stopwords</code></td><td>100</td></tr>
-<tr><td>index.html</td><td>This project webpage</td><td>&ndash;</td></tr></tbody></table></div></section>
+<tr><td><code>hindi_stopwords.py</code></td><td>Python list <code>hindi_stopwords</code></td><td>100</td></tr>
+<tr><td><code>bhojpuri_stopwords.py</code></td><td>Python list <code>bhojpuri_stopwords</code></td><td>100</td></tr>
+<tr><td><code>index.html</code></td><td>This project webpage</td><td>&ndash;</td></tr>
+<tr><td><code>README.md</code></td><td>Project description and usage instructions</td><td>&ndash;</td></tr></tbody></table></div>
 
-<section id="lists"><h2><span>6</span>Stop-word lists</h2>
-<h3>Hindi (100 words)</h3><ul class="chips"><li>aur</li><li>lekin</li><li>ya</li><li>agar</li><li>to</li><li>jo</li><li>ki</li><li>kyunki</li><li>isliye</li><li>magar</li><li>phir</li><li>jab</li><li>tab</li><li>yeh</li><li>woh</li><li>ye</li><li>ve</li><li>is</li><li>us</li><li>in</li><li>un</li><li>main</li><li>mujhe</li><li>mera</li><li>meri</li><li>mere</li><li>hum</li><li>humein</li><li>hamara</li><li>hamari</li><li>hamare</li><li>tum</li><li>tumhara</li><li>aap</li><li>aapka</li><li>aapki</li><li>aapke</li><li>uska</li><li>uski</li><li>uske</li><li>unka</li><li>unki</li><li>unke</li><li>apna</li><li>apni</li><li>apne</li><li>ka</li><li>ke</li><li>mein</li><li>se</li><li>par</li><li>ko</li><li>liye</li><li>saath</li><li>dwara</li><li>tak</li><li>bina</li><li>baad</li><li>pehle</li><li>andar</li><li>bahar</li><li>upar</li><li>neeche</li><li>hai</li><li>hain</li><li>tha</li><li>thi</li><li>the</li><li>ho</li><li>hoga</li><li>hogi</li><li>honge</li><li>hua</li><li>hui</li><li>hue</li><li>raha</li><li>rahi</li><li>rahe</li><li>kar</li><li>karna</li><li>kiya</li><li>kiye</li><li>sakta</li><li>sakti</li><li>sakte</li><li>kya</li><li>kaun</li><li>kaise</li><li>kab</li><li>kahan</li><li>kyon</li><li>nahi</li><li>nahin</li><li>sirf</li><li>bhi</li><li>hi</li><li>ek</li><li>bahut</li><li>kuch</li><li>sab</li></ul>
-<h3>Bhojpuri (100 words)</h3><ul class="chips"><li>aa</li><li>au</li><li>awur</li><li>bakir</li><li>baakir</li><li>chahe</li><li>je</li><li>ta</li><li>tabo</li><li>jaun</li><li>ee</li><li>oo</li><li>eh</li><li>oh</li><li>ehi</li><li>ohi</li><li>ohni</li><li>ehni</li><li>ham</li><li>hamni</li><li>hamar</li><li>hamra</li><li>hamke</li><li>tu</li><li>tohar</li><li>tohra</li><li>tohni</li><li>tohke</li><li>toke</li><li>raua</li><li>raura</li><li>okar</li><li>ekar</li><li>ohke</li><li>ehke</li><li>apan</li><li>aapan</li><li>me</li><li>pe</li><li>sein</li><li>le</li><li>khatir</li><li>sange</li><li>sathe</li><li>lagi</li><li>bhitare</li><li>bahare</li><li>upare</li><li>niche</li><li>pahile</li><li>baade</li><li>binu</li><li>bin</li><li>taki</li><li>ba</li><li>baa</li><li>bate</li><li>bani</li><li>bade</li><li>badu</li><li>badi</li><li>baru</li><li>rahal</li><li>rahlas</li><li>rahlan</li><li>rahlu</li><li>hola</li><li>hokhe</li><li>hokhela</li><li>hoi</li><li>hoke</li><li>bhail</li><li>bhaili</li><li>bhaile</li><li>kail</li><li>kaile</li><li>kare</li><li>karela</li><li>karat</li><li>sake</li><li>sakela</li><li>kaa</li><li>kahe</li><li>kaisan</li><li>kawan</li><li>kekar</li><li>keke</li><li>kehu</li><li>kahwa</li><li>kitna</li><li>na</li><li>naikhe</li><li>naikhi</li><li>naikhan</li><li>sabhe</li><li>sabke</li><li>kuchu</li><li>tanik</li><li>dher</li><li>bahute</li></ul></section>
+<section id="lexicon"><h2><span>6</span>Stop-word lists</h2>
+<p>The two lists are shown side by side so that equivalent word types can be compared. Choose a grammatical category to see the Hindi and Bhojpuri words of that type together, or search for a word.</p>
+<div class="ui">
+<div class="ctl" id="cats" role="group" aria-label="Filter by grammatical category"></div>
+<input class="q" id="q" type="search" placeholder="Search a word, e.g. hai" aria-label="Search stop words">
+<div class="cols">
+ <div class="col h"><h3><span>Hindi</span><em id="nh"></em></h3><ul class="chips" id="lh"></ul></div>
+ <div class="col b"><h3><span>Bhojpuri</span><em id="nb"></em></h3><ul class="chips" id="lb"></ul></div>
+</div></div>
+<p class="leg">Solid outline: Hindi. Dashed outline: Bhojpuri. Categories are assigned by each word&rsquo;s main function.</p></section>
 
 <section id="observations"><h2><span>7</span>Observations</h2>
-<p>A comparison of the two lists gives the following observations.</p>
+<p>Figure 1 shows how the 100 words of each list divide among the six categories, and Table 3 pairs Hindi function words with their Bhojpuri counterparts from the lists.</p>
+<div class="fig" id="fig" role="img" aria-label="Bar chart of word counts per grammatical category for Hindi and Bhojpuri"></div>
+<p class="leg"><b style="background:var(--hi)"></b>Hindi<b style="background:var(--bh)"></b>Bhojpuri &nbsp; Figure 1. Words per category in each list.</p>
+<div class="tw"><table><caption>Table 3. Corresponding function words</caption>
+<thead><tr><th>Meaning</th><th>Hindi</th><th>Bhojpuri</th></tr></thead><tbody>
+<tr><td>and</td><td class="h">aur</td><td class="b">aa, au, awur</td></tr>
+<tr><td>in; on</td><td class="h">mein; par</td><td class="b">me; pe</td></tr>
+<tr><td>for</td><td class="h">liye</td><td class="b">khatir, lagi</td></tr>
+<tr><td>with</td><td class="h">saath</td><td class="b">sange, sathe</td></tr>
+<tr><td>I; we</td><td class="h">main; hum</td><td class="b">ham, hamni</td></tr>
+<tr><td>my</td><td class="h">mera, meri, mere</td><td class="b">hamar, hamra</td></tr>
+<tr><td>you (your)</td><td class="h">tum (tumhara)</td><td class="b">tu (tohar, tohra)</td></tr>
+<tr><td>is; are</td><td class="h">hai, hain</td><td class="b">ba, bate, bani</td></tr>
+<tr><td>was; were</td><td class="h">tha, thi, the</td><td class="b">rahal, rahlas, rahlan</td></tr>
+<tr><td>what; why</td><td class="h">kya; kyon</td><td class="b">kaa; kahe</td></tr>
+<tr><td>not</td><td class="h">nahi, nahin</td><td class="b">na, naikhe</td></tr>
+<tr><td>before; after</td><td class="h">pehle; baad</td><td class="b">pahile; baade</td></tr>
+<tr><td>inside; outside</td><td class="h">andar; bahar</td><td class="b">bhitare; bahare</td></tr>
+<tr><td>all</td><td class="h">sab</td><td class="b">sabhe, sabke</td></tr>
+</tbody></table></div>
 <ul class="b">
 <li><strong>No common words:</strong> The two lists share no word. Where Hindi and Bhojpuri use the same word, it appears in the Hindi list only, and the Bhojpuri list uses its own form.</li>
-<li><strong>Postpositions:</strong> The Hindi list contains <em>ka</em>, <em>ke</em>, <em>ki</em>, <em>mein</em>, <em>se</em> and <em>par</em>, whereas the Bhojpuri list contains <em>me</em>, <em>pe</em>, <em>sein</em>, <em>le</em>, <em>khatir</em> and <em>sange</em>.</li>
-<li><strong>Pronouns:</strong> The Hindi list contains <em>main</em>, <em>hum</em>, <em>tum</em> and <em>aap</em>, whereas the Bhojpuri list contains <em>ham</em>, <em>hamni</em>, <em>tu</em>, <em>tohni</em> and <em>raua</em>.</li>
-<li><strong>Auxiliary verbs:</strong> Hindi forms such as <em>hai</em>, <em>hain</em>, <em>tha</em> and <em>thi</em> correspond to Bhojpuri forms such as <em>ba</em>, <em>bate</em>, <em>bani</em> and <em>rahal</em>.</li>
+<li><strong>Postpositions and verbs:</strong> Hindi marks relations with <em>ka</em>, <em>ke</em>, <em>mein</em> and <em>par</em>, and Bhojpuri with <em>me</em>, <em>pe</em>, <em>sein</em> and <em>khatir</em>. Hindi <em>hai</em> corresponds to Bhojpuri <em>ba</em>, and Hindi <em>tha</em> to Bhojpuri <em>rahal</em>.</li>
+<li><strong>Verb forms:</strong> The Bhojpuri list has more auxiliary-verb entries than the Hindi list (27 against 22), because it records several forms of &ldquo;to be&rdquo; (<em>ba</em>, <em>bate</em>, <em>bani</em>, <em>bade</em>) and of the past (<em>rahal</em>, <em>rahlas</em>, <em>rahlan</em>). The Hindi list has more pronoun entries (33 against 27), including the possessives <em>mera</em>, <em>hamara</em>, <em>tumhara</em> and <em>aapka</em> with their gender forms.</li>
 <li><strong>Spelling:</strong> Because Roman spelling is not standardised, closely related forms occur within the lists, such as <em>nahi</em> and <em>nahin</em> in Hindi.</li></ul></section>
 
-<section id="limitations"><h2><span>8</span>Limitations</h2>
+<section id="demo"><h2><span>8</span>Demonstration</h2>
+<p>The tool below applies the lists to a sentence typed in Roman letters. Words found in the Hindi list are shaded blue, and words found in the Bhojpuri list are shaded green with a dashed underline. All other words are kept. Matching ignores capital letters.</p>
+<div class="ui">
+<div class="ctl"><button type="button" id="s1">Hindi sample</button><button type="button" id="s2">Bhojpuri sample</button></div>
+<textarea id="txt" aria-label="Text to process" rows="2" spellcheck="false">mera gaon Bihar mein hai aur wahan ke log kheti karte hain</textarea>
+<div class="ctl" role="group" aria-label="Lists to apply">
+ <label class="pill"><input type="radio" name="m" value="both" checked  class="vh"><span>Both lists</span></label>
+ <label class="pill"><input type="radio" name="m" value="h"  class="vh"><span>Hindi only</span></label>
+ <label class="pill"><input type="radio" name="m" value="b"  class="vh"><span>Bhojpuri only</span></label></div>
+<p class="out" id="out" aria-live="polite"></p>
+<p class="stat" id="stat"></p></div>
+<p>The same step in Python, using the files in this repository:</p>
+<pre><code>import re
+from hindi_stopwords import hindi_stopwords
+from bhojpuri_stopwords import bhojpuri_stopwords
+
+stop = set(hindi_stopwords) | set(bhojpuri_stopwords)
+text = "mera gaon Bihar mein hai"
+tokens = re.findall(r"[a-z]+", text.lower())
+print([t for t in tokens if t not in stop])   # ['gaon', 'bihar']</code></pre>
+<p>Words such as <em>karte</em> and <em>wahan</em> are not in the lists, so they are kept. This shows why the lists are a starting point and not a complete resource.</p></section>
+
+<section id="limitations"><h2><span>9</span>Limitations</h2>
 <ul class="b">
-<li>The lists are illustrative and are not exhaustive. A larger list could be built from a text corpus by counting word frequencies.</li>
-<li>Because the two lists do not overlap, a word used in both languages appears in one list only. A combined list may be preferable for tasks that process both languages together.</li>
+<li>The lists are illustrative and not exhaustive. A larger list could be built from a text corpus by counting word frequencies.</li>
+<li>Because the lists do not overlap, a word used in both languages appears in one list only. For text that mixes both languages, the two lists should be combined, as in the example above.</li>
 <li>Roman spellings of Hindi and Bhojpuri words vary between writers, so a word may appear in more than one form.</li>
 <li>Bhojpuri is spoken across several regions, and some forms may differ between speakers.</li>
-<li>Words such as negations can carry meaning in certain tasks, such as sentiment analysis, so removing stop words should be tested for each task.</li></ul></section>
+<li>Negations can carry meaning in some tasks, such as sentiment analysis, so stop-word removal should be tested for each task.</li></ul></section>
 
-<section id="conclusion"><h2><span>9</span>Conclusion</h2>
-<p>This assignment produced two stop-word lists of 100 words each, one for Hindi and one for Bhojpuri, written in Roman letters and published as Python files in a GitHub repository. The lists were compiled so that no word appears in both, which brings out the distinctive postpositions, pronouns and auxiliary verbs of each language. They can be used directly for text preprocessing and can be extended with further words and spelling variants.</p></section>
+<section id="conclusion"><h2><span>10</span>Conclusion</h2>
+<p>This assignment produced two stop-word lists of 100 words each, one for Hindi and one for Bhojpuri, written in Roman letters and published as Python files in a GitHub repository. Because no word appears in both lists, they bring out the distinctive postpositions, pronouns and auxiliary verbs of each language. They can be used directly for text preprocessing and extended with further words and spelling variants.</p></section>
 
 <section id="references"><h2>References</h2>
-<ul class="b">
-<li><a href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">GitHub Pages Documentation</a>: Website Publishing and Hosting</li></ul></section>
+<ul class="b"><li><a href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">GitHub Pages Documentation</a>: Website Publishing and Hosting</li></ul></section>
 </article></div>
 
 <footer>Monsoon Semester 2026 &middot; Department of HSS, IIT (ISM) Dhanbad</footer>
+
+<script>
+const H="aur lekin ya agar to jo ki kyunki isliye magar phir jab tab yeh woh ye ve is us in un main mujhe mera meri mere hum humein hamara hamari hamare tum tumhara aap aapka aapki aapke uska uski uske unka unki unke apna apni apne ka ke mein se par ko liye saath dwara tak bina baad pehle andar bahar upar neeche hai hain tha thi the ho hoga hogi honge hua hui hue raha rahi rahe kar karna kiya kiye sakta sakti sakte kya kaun kaise kab kahan kyon nahi nahin sirf bhi hi ek bahut kuch sab".split(" ");
+const B="aa au awur bakir baakir chahe je ta tabo jaun ee ohi eh ohni ehi oo oh ehni ham hamni hamar hamra hamke tu tohar tohra tohni tohke toke raua raura okar ekar ohke ehke apan aapan me pe sein le khatir sange sathe lagi bhitare bahare upare niche pahile baade binu bin taki ba baa bate bani bade badu badi baru rahal rahlas rahlan rahlu hola hokhe hokhela hoi hoke bhail bhaili bhaile kail kaile kare karela karat sake sakela kaa kahe kaisan kawan kekar keke kehu kahwa kitna na naikhe naikhi naikhan sabhe sabke kuchu tanik dher bahute".split(" ");
+const C=["Conjunctions","Pronouns","Postpositions","Auxiliary verbs","Interrogatives","Negation and quantifiers"];
+// category = first boundary greater than the word's position in the original file
+const cat=(L,ends)=>L.map((w,i)=>w==="taki"?0:ends.findIndex(e=>i<e));
+const hc=cat(H,[13,46,63,85,91,100]), bc=cat(B,[10,37,54,81,90,100]);
+const $=id=>document.getElementById(id);
+let cur=-1;
+// category buttons
+const cb=$("cats");
+["All",...C].forEach((n,k)=>{const b=document.createElement("button");b.type="button";b.textContent=n;b.setAttribute("aria-pressed",k===0);b.onclick=()=>{cur=k-1;[...cb.children].forEach((x,j)=>x.setAttribute("aria-pressed",j===k));draw()};cb.appendChild(b)});
+function fill(ul,L,cs,q,out){ul.textContent="";let n=0;L.forEach((w,i)=>{if((cur<0||cs[i]===cur)&&w.includes(q)){const li=document.createElement("li");li.textContent=w;li.title=C[cs[i]];ul.appendChild(li);n++}});out.textContent=n+" of 100";if(!n){ul.textContent="No match."}}
+function draw(){const q=$("q").value.trim().toLowerCase();fill($("lh"),H,hc,q,$("nh"));fill($("lb"),B,bc,q,$("nb"))}
+$("q").oninput=draw;draw();
+// figure 1
+const cnt=(cs,k)=>cs.filter(c=>c===k).length;
+$("fig").innerHTML=C.map((n,k)=>{const a=cnt(hc,k),b=cnt(bc,k);return `<div class="bar"><span>${n}</span><div class="t"><i style="width:${a*2.4}%;background:var(--hi)"></i><span>${a}</span></div><div class="t"><i style="width:${b*2.4}%;background:var(--bh)"></i><span>${b}</span></div></div>`}).join("");
+// demo
+const hs=new Set(H),bs=new Set(B);
+function run(){const m=document.querySelector("input[name=m]:checked").value,t=$("txt").value;let n=0,r=0;
+ const out=t.split(/([A-Za-z]+)/).map(p=>{if(!/^[A-Za-z]+$/.test(p))return p.replace(/</g,"&lt;");n++;const w=p.toLowerCase();
+  if(m!=="b"&&hs.has(w)){r++;return `<span class="th">${p}</span>`}
+  if(m!=="h"&&bs.has(w)){r++;return `<span class="tb">${p}</span>`}return p}).join("");
+ $("out").innerHTML=out||"Type a sentence above.";$("stat").textContent=n?`${n} words, ${r} removed, ${n-r} kept.`:""}
+$("txt").oninput=run;document.querySelectorAll("input[name=m]").forEach(e=>e.onchange=run);
+$("s1").onclick=()=>{$("txt").value="mera gaon Bihar mein hai aur wahan ke log kheti karte hain";run()};
+$("s2").onclick=()=>{$("txt").value="hamar gaon Bhojpur me ba aa okar log kheti karela";run()};
+run();
+// contents highlight
+const links=[...document.querySelectorAll(".toc a")];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.toggleAttribute("aria-current",a.getAttribute("href")==="#"+e.target.id))}}),{rootMargin:"-10% 0px -75% 0px"});
+document.querySelectorAll("article section").forEach(s=>io.observe(s));
+</script>
 </body>
 </html>
