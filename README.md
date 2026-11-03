@@ -3,7 +3,9 @@
 Stop-word lists of 100 words each for **Hindi** and **Bhojpuri**, written in Roman (Latin) letters and transliterated from Devanagari, for use in Natural Language Processing (NLP) text preprocessing.
 
 **Author:** Aditya Kumar
+
 **Semester:** Monsoon Semester 2026
+
 **Affiliation:** Department of Humanities and Social Sciences, Indian Institute of Technology (Indian School of Mines), Dhanbad
 
 **Project webpage:** https://adityakumar190.github.io/hindi-bhojpuri-stopwords/
