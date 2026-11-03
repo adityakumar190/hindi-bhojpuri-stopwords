@@ -16,11 +16,6 @@ How do the stop words of Hindi and Bhojpuri differ in their postpositions, prono
 
 Stop words are very frequent function words, such as conjunctions, pronouns, postpositions and auxiliary verbs, that add little to the meaning of a sentence (for example, Hindi *aur* "and" and *hai* "is"). Removing them during preprocessing reduces vocabulary size and noise, so that tasks like text classification, information retrieval and topic modelling can focus on content words.
 
-```
-Hindi:     mera  gaon  Bihar  mein  hai   ->  gaon  Bihar
-Bhojpuri:  hamar gaon  Bihar  me    ba    ->  gaon  Bihar
-```
-
 ## Repository contents
 
 | File | Description |
