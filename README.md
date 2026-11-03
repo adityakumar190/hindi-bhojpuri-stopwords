@@ -57,7 +57,7 @@ Use one list alone (for example `set(hindi_stopwords)`) when processing text in 
 - The lists are illustrative, not exhaustive. A larger list can be built by counting word frequencies in a text corpus.
 - Roman spelling is not standardised, so a word may appear in other forms than those listed.
 - Bhojpuri is spoken across several regions, and some forms differ between speakers.
-- Negations can carry meaning in tasks such as sentiment analysis, so test stop-word removal for each task.
+- Testing stop-word removal for each task is important because negations can carry meaning in tasks like sentiment analysis.
 
 ## Citation
 
