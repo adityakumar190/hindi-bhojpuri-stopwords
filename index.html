@@ -64,8 +64,6 @@ td.h{color:var(--hi)}td.b{color:var(--bh)}
 code{font:.9em Consolas,"Courier New",monospace;background:var(--band);padding:.1rem .35rem;border-radius:4px}
 pre{background:#161b3d;color:#e4e8ff;padding:1rem 1.2rem;border-radius:8px;overflow-x:auto;font:.9rem/1.6 Consolas,"Courier New",monospace}
 pre code{background:none;padding:0}
-.repo{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;border:1px solid var(--rule);background:#fff;border-radius:8px;padding:1rem 1.2rem;font-family:var(--sans)}
-.repo .btn{background:var(--ink);color:#fff;border-color:var(--ink)}
 /* explorer */
 .ui{font-family:var(--sans);font-size:.95rem}
 .ctl{display:flex;flex-wrap:wrap;gap:.45rem;margin:1rem 0}
@@ -181,9 +179,7 @@ footer a{color:#fff}
 <tr><td><code>hindi_stopwords.py</code></td><td>Python list <code>hindi_stopwords</code></td><td>100</td></tr>
 <tr><td><code>bhojpuri_stopwords.py</code></td><td>Python list <code>bhojpuri_stopwords</code></td><td>100</td></tr>
 <tr><td><code>index.html</code></td><td>This project webpage</td><td>&ndash;</td></tr>
-<tr><td><code>README.md</code></td><td>Project description and usage instructions</td><td>&ndash;</td></tr></tbody></table></div>
-<div class="repo"><span>Source files, history and the README are available in the repository.</span>
-<a class="btn" href="https://github.com/adityakumar190/hindi-bhojpuri-stopwords" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>Open repository</a></div></section>
+<tr><td><code>README.md</code></td><td>Project description and usage instructions</td><td>&ndash;</td></tr></tbody></table></div></section>
 
 <section id="lexicon"><h2><span>6</span>Stop-word lists</h2>
 <p>The two lists are shown side by side so that equivalent word types can be compared. Choose a grammatical category to see the Hindi and Bhojpuri words of that type together, or search for a word.</p>
@@ -261,7 +257,7 @@ print([t for t in tokens if t not in stop])   # ['gaon', 'bihar']</code></pre>
 <ul class="b"><li><a href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">GitHub Pages Documentation</a>: Website Publishing and Hosting</li></ul></section>
 </article></div>
 
-<footer>Monsoon Semester 2026 &middot; Department of HSS, IIT (ISM) Dhanbad &middot; <a href="https://github.com/adityakumar190/hindi-bhojpuri-stopwords" target="_blank" rel="noopener noreferrer">GitHub repository</a></footer>
+<footer>Monsoon Semester 2026 &middot; Department of HSS, IIT (ISM) Dhanbad</footer>
 
 <script>
 const H="aur lekin ya agar to jo ki kyunki isliye magar phir jab tab yeh woh ye ve is us in un main mujhe mera meri mere hum humein hamara hamari hamare tum tumhara aap aapka aapki aapke uska uski uske unka unki unke apna apni apne ka ke mein se par ko liye saath dwara tak bina baad pehle andar bahar upar neeche hai hain tha thi the ho hoga hogi honge hua hui hue raha rahi rahe kar karna kiya kiye sakta sakti sakte kya kaun kaise kab kahan kyon nahi nahin sirf bhi hi ek bahut kuch sab".split(" ");
