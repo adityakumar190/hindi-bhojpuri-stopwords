@@ -1,4 +1,4 @@
-# Hindi and Bhojpuri Stop Words for NLP
+# Indic Language Stop Words for Natural Language Processing
 
 Stop-word lists of 100 words each for **Hindi** and **Bhojpuri**, written in Roman (Latin) letters and transliterated from Devanagari, for use in Natural Language Processing (NLP) text preprocessing.
 
